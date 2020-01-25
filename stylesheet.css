@@ -63,13 +63,11 @@ body {
   padding-top: 20px;
   clear: both;
   display: grid;
-  grid-template-columns: 50vw 50vw;
+  grid-template-columns: 60% 40%;
 }
 
 /* -----main----- */
 #main {
-  float: left;
-  width: 95%;
   padding: 10px 30px 10px 10px;
 }
 
@@ -130,8 +128,6 @@ body {
 
 /* -----side----- */
 #side {
-  float: right;
-  width: 50%;
   padding: 20px;
   background-color: #F99;
 }
