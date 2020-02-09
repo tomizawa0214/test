@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset-"utf-8">
+  <meta charset="utf-8">
   <title>太郎のポートフォリオサイト</title>
   <link rel="icon" href="favicon.ico">
-  <meta name="discription" content="太郎のポートフォリオサイトです。"
+  <meta name="description" content="太郎のポートフォリオサイトです。">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <img src="MyPortfolio/img/taro.png" width="100" height="100" alt="太郎のアイコンです">
-    <h1>山田太郎</h1>
-    <p>UI/UXデザイナー見習いです</p>
-    <ul>
-      <li>
-        <a href="https://dotinstall.com" target="_blank">
-          <img src="MyPortfolio/img/blog.png" width="20" height="20" alt="ブログサイトへのリンク画像です">
-        </a>
-      </li>
-      <li>
-        <a href="https://dotinstall.com" target="_blank">
-          <img src="MyPortfolio/img/photos.png" width="20" height="20" alt="写真サイトへのリンク画像です">
-        </a>
-      </li>
-    </ul>
-
+    <div class="container">
+      <div class="icon">
+        <img src="MyPortfolio/img/taro.png" width="120" height="120" alt="太郎のアイコンです">
+      </div>
+      <div class="info">
+        <h1>山田太郎</h1>
+        <p>UI/UXデザイナー見習いです</p>
+        <ul>
+          <li>
+            <a href="https://dotinstall.com" target="_blank">
+              <img src="MyPortfolio/img/blog.png" width="20" height="20" alt="ブログサイトへのリンク画像です">
+            </a>
+          </li>
+          <li>
+            <a href="https://dotinstall.com" target="_blank">
+              <img src="MyPortfolio/img/photos.png" width="20" height="20" alt="写真サイトへのリンク画像です">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 
   <!-- 作品紹介 -->
-  <section>
+  <section class="works">
     <h1>WORKS</h1>
-  </section>
 
     <section>
       <img src="MyPortfolio/img/work1.png" width="400" height="260" alt="勇者ゲームの紹介画像です">
@@ -45,12 +50,13 @@
 
     <section>
       <img src="MyPortfolio/img/work3.png" width="400" height="260" alt="神経衰弱の紹介画像です">
-      <h1>神経衰弱</h1s>
+      <h1>神経衰弱</h1>
       <p>楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。</p>
     </section>
+  </section>
 
   <footer>
-    <p>(C) dotinstall.com</p>
+    <p>(c) dotinstall.com</p>
   </footer>
 </body>
-<html>
+</html>
