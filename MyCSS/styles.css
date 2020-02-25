@@ -1,19 +1,18 @@
-#about > #main {
-  color: gray;
+body {
+  margin: 0;
 }
 
-h1 {
-  color: red !important;
- }
+header {
+  height: 200px;
+  background: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-h1#main.box {
-   color: yellow;
-  }
+div {
+  width: 100px;
+  height: 120px;
+  background: skyblue;
 
-section > #main.title {
-   color: blue
-  }
-
-section#about > h1 {
-   color: pink;
-  }
+}
