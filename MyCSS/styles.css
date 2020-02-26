@@ -1,18 +1,17 @@
-body {
-  margin: 0;
-}
-
-header {
-  height: 200px;
-  background: silver;
+section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 64px;
+  justify-content: space-between;
 }
 
-div {
-  width: 100px;
-  height: 120px;
-  background: skyblue;
+section:nth-child(even) {
+  flex-direction: row-reverse;
+}
 
+.pic {
+  width: 180px;
+}
+
+.desc {
+  width: calc(100% - 180px - 32px);
 }
