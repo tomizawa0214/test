@@ -23,22 +23,44 @@
                     <td>ダブルサイズ(440円)</td>
                     <td><input type="radio" name="size" onclick="size_price()"></td>
                 </tr>
+            </table>
+        </form>
+        <hr>
+        <form name="myform_2">
+            <table>
                 <tr>
-                    <td>合計:<span id="total_price"></span>円</td>
+                    <td>コーン(50円)</td>
+                    <td><input type="radio" name="option" onclick="size_price()"></td>
+                </tr>
+                <tr>
+                    <td>ドライアイス(50円)</td>
+                    <td><input type="radio" name="option" onclick="size_price()"></td>
                 </tr>
             </table>
         </form>
+        <hr>
+        <p>合計:<span id="total_price"></span>円</p>
 
         <script>
-            price = [280, 330, 440];
+            const size = [280, 330, 440];
+            const option = [50, 50]
             function size_price() {
-                total = 0;
+                let size_total = 0;
+                let option_total = 0;
+                const total = document.getElementById("total_price");
                 for ( i=0; i<=2; i++ ) {
                     if ( document.myform.elements[i].checked == true ) {
-                        total += price[i];
+                        size_total = size[i];
                     }
+                    total.textContent = size_total;
                 }
-                document.getElementById("total_price").textContent = total;
+                for ( j=0; j<=1; j++ ) {
+                    if ( document.myform_2.elements[j].checked == true ) {
+                        option_total = option[j];
+                    }
+                    total.textContent = option_total
+                }
+                total.textContent = size_total + option_total;
             }
         </script>
     </body>
