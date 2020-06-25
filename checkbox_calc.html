@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>チェックボックスで合計金額を計算</title>
+    </head>
+
+    <body>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td>ミニサイズ(280円)</td>
+                    <td><input type="radio" name="size" onclick="size_price()"></td>
+                </tr>
+                <tr>
+                    <td>シングルサイズ(330円)</td>
+                    <td><input type="radio" name="size" onclick="size_price()"></td>
+                </tr>
+                <tr>
+                    <td>ダブルサイズ(440円)</td>
+                    <td><input type="radio" name="size" onclick="size_price()"></td>
+                </tr>
+                <tr>
+                    <td>合計:<span id="total_price"></span>円</td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            price = [280, 330, 440];
+            function size_price() {
+                total = 0;
+                for ( i=0; i<=2; i++ ) {
+                    if ( document.myform.elements[i].checked == true ) {
+                        total += price[i];
+                    }
+                }
+                document.getElementById("total_price").textContent = total;
+            }
+        </script>
+    </body>
+
+</html>
