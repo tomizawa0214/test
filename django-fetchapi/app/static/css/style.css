@@ -6,18 +6,11 @@
 
 body {
     background: #F1F1F1;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
 }
 
-.card-body {
-    padding: 2rem;
-}
-
-.button {
-    width: 150px;
-}
-
-.btn {
-    font-size: 80%;
-    border-radius: 5rem;
-    font-weight: bold;
+main {
+    flex: 1;
 }

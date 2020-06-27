@@ -5,33 +5,40 @@ from django.http import JsonResponse
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        blog = Blog.objects.all()
+        blog_data = Blog.objects.all()
 
         return render(request, 'app/index.html', {
-            'blog': blog,
+            'blog_data': blog_data,
         })
 
-def addblog(request):
-    title = request.POST.get('title')
 
-    blog = Blog()
-    blog.title = title
-    blog.save()
+class AddView(View):
+    def post(self, request, *args, **kwargs):
+        title = request.POST.get('title')
 
-    d = {
-        'title': title,
-    }
-    return JsonResponse(d)
+        blog = Blog()
+        blog.title = title
+        blog.save()
 
-def searchblog(request):
-    title = request.GET.get('title')
+        data = {
+            'title': title,
+        }
+        return JsonResponse(data)
 
-    if title:
-        title_list = [blog.title for blog in Blog.objects.filter(title__icontains=title)]
-    else:
-        title_list = [blog.title for blog in Blog.objects.all()]
 
-    d = {
-        'title_list': title_list,
-    }
-    return JsonResponse(d)
+class SearchView(View):
+    def post(self, request, *args, **kwargs):
+        title = request.POST.get('title')
+        blog_data = Blog.objects.all()
+        title_list = []
+
+        if title:
+            blog_data = blog_data.filter(title__icontains=title)
+
+        for blog in blog_data:
+            title_list.append(blog.title)
+        
+        data = {
+            'title_list': title_list,
+        }
+        return JsonResponse(data)
