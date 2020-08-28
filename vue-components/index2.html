@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コンポーネント</title>
+</head>
+
+<body>
+  <div id="main">
+    <my-spinner color="#11AA11" v-bind:size="30"></my-spinner>
+  </div>
+</body>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script>
+    // コンポーネント
+    Vue.component("my-spinner", {
+    template: `<div class='my-spinner rotate'
+        v-bind:style='style'
+        v-show='loading'></div>`,
+      props: {
+        loading: { // 表示・非表示のフラグ
+          type: Boolean,
+          default: true
+        },
+        color: {
+          type: String, // スピナーの色
+          default: "#000"
+        },
+        size: { // スピナーのサイズ
+          type: Number,
+          default: 16
+        }
+      },
+      computed: {
+        style() {
+          return {
+            height: this.size + "px",
+            width: this.size + "px",
+            borderColor: this.color + " " + this.color + " " + "transparent",
+          };
+        }
+      },
+    });
+
+    // Vue実行
+    new Vue({
+      el: "#main"
+    });
+</script>
+<style lang="css" scoped>
+  .my-spinner {
+    display: inline-block;
+    border: 2px;
+    border-style: solid;
+    border-radius: 100%;
+  }
+
+  .my-spinner.rotate {
+    animation: rotate-anim 1s 0s infinite linear;
+    animation-fill-mode: both;
+  }
+
+  @keyframes rotate-anim {
+      0%
+    {
+      transform: rotate(0deg) scale(1);
+    }
+      50%
+    {
+      transform: rotate(180deg) scale(0.8);
+    }
+      100%
+    {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  /* SpinnerImage用 */
+  .spinner-image-wrappter {
+    position: relative;
+    display: inline-block;
+  }
+
+  .spinner-image-wrappter .spinner {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spinner-image-wrappter .spinner-image {
+    position: absolute;
+    top: 0;
+  }
+</style>
+</html>
