@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンポーネント</title>
+</head>
+
+<body>
+    <div id="main">
+        <my-component v-bind:message="message"></my-component>
+        <my-button label="a" v-on:click="labelClick"></my-button>
+        <my-button label="b" v-on:click="labelClick"></my-button>
+    </div>
+</body>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script>
+    // コンポーネント定義
+    Vue.component("my-component", {
+        props: ["message"],
+        template: "<h1>{{ message }}</h1>"
+    });
+
+    Vue.component("my-button", {
+        props: {
+            label: { //バリデーション
+                type: String, //文字列
+                required: true // 必須
+            }
+        },
+        template: "<button v-on:click='clickLabel'>{{ label }}</button>",
+        methods: {
+            clickLabel() {
+                // イベント発火
+                this.$emit("click", this.label);
+            }
+        },
+    });
+
+    new Vue({
+        el: "#main",
+        data: {
+            message: "click my buttons",
+        },
+        methods: {
+            labelClick(label) {
+                this.message = label + "button click!";
+            }
+        }
+    });
+</script>
+</html>
