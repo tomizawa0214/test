@@ -17,6 +17,14 @@
     料金は{{ parsePrice }}になります。
   </div>
 
+  <div id="app-3">
+    <button @click="flg = !flg">表示切り替え</button>
+    <p v-if="flg">
+      メソッド: {{ method() }}<br />
+      算出プロパティ: {{ prop }}
+    </p>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     new Vue({
@@ -49,7 +57,24 @@
           return Number(this.price).toLocaleString() + '円'
         }
       }
-    })
+    });
+
+    new Vue({
+      el: "#app-3",
+      data: {
+        flg: true
+      },
+      methods: {
+        method() {
+          return new Date().toLocaleString();
+        }
+      },
+      computed: {
+        prop() {
+          return new Date().toLocaleString();
+        }
+      }
+    });
   </script>
 </body>
 </html>
