@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product App</title>
+</head>
+<body>
+
+  <div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <p>Reversed message: "{{ reverseMessage() }}"</p>
+  </div>
+
+  <div id="demo">{{ fullName }}</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var vm = new Vue({
+      el: '#demo',
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar'
+      },
+      computed: {
+        fullName: {
+          get: function() {
+            return this.firstName + ' ' + this.lastName
+          },
+          set: function(newValue) {
+            var names = newValue.split(' ')
+            this.firstName = names[0]
+            this.lastName = names[names.length - 1]
+          }
+        }
+      }
+      // computed: {
+      //   fullName: function() {
+      //     return this.firstName + ' ' + this.lastName
+      //   }
+      // }
+      // el: '#example',
+      // data: {
+      //   message: 'Hello'
+      // },
+      // computed: {
+      //   reversedMessage: function() {
+      //     return this.message.split('').reverse().join('')
+      //   }
+      // },
+      // methods: {
+      //   reverseMessage: function() {
+      //     return this.message.split('').reverse().join('')
+      //   }
+      // }
+    })
+  </script>
+</body>
+</html>

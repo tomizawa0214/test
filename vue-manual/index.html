@@ -7,6 +7,10 @@
 </head>
 <body>
 
+  <div id="app">
+    {{ message }}
+  </div>
+
   <div id="app-3">
     <span v-if="seen">Now you see me</span>
   </div>
@@ -45,6 +49,13 @@
     Vue.component('todo-item', {
       props: ['todo'],
       template: '<li>{{ todo.text }}</li>'
+    })
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
     })
 
     var app3 = new Vue({
