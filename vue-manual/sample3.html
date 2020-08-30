@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product App</title>
+</head>
+<body>
+
+  <div id="app">
+    <!-- <p><a v-bind:href="book.url">{{ book.title }}</a></p> -->
+    <p><a :href="book.url">{{ book.title }}</a></p>
+    <p>
+      <span>{{ book.author }}</span>
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        book: {
+          title: 'Pythonで機械学習入門',
+          author: '大関 真之 著',
+          url: 'https://www.ohmsha.co.jp/book/9784274222863/'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
