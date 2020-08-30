@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product App</title>
+</head>
+<body>
+
+  <div id="app" class="container">
+    <h2>3文字以下で入力してください</h2>
+    <p>
+      <input
+        id="field"  
+        type="text"
+        name="name"
+        size="40"
+        maxlength="30"
+        v-model="name"
+      />
+    </p>
+    <div :style="displayObject">{{ message }}</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      computed: {
+        displayObject() {
+          return {
+            display: this.active ? 'block' : 'none',
+            'font-weight': 'bold',
+            color: 'red'
+          };
+        }
+      },
+      data: {
+        name: '',
+        active: false,
+        message: 'エラー文言を設定する'
+      },
+      watch: {
+        name(value) {
+          if (3 < value.length) {
+            this.active = true;
+            this.message = '3文字以下で入力してください!'
+          } else {
+            this.active = false;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
