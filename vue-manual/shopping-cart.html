@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <style>
+    .flex-container {
+      display: flex;
+    }
     .flex-item {
       padding: 10px;
       border-radius: 10px;
@@ -43,20 +46,67 @@
       margin: 10px;
       width: 100%;
     }
+
+    .cart {
+      flex-grow: 1;
+      margin: 20px;
+      position: relative;
+    }
+
+    .summary {
+      position: fixed;
+      padding: 5px;
+      width: 400px;
+      border-radius: 10px;
+      border: 1px solid #EDEDED;
+      box-shadow: 1px 0 5px 4px rgba(85, 144, 184, .6);
+      background: #F6F6F6;
+    }
+
+    .table-cart > tr > td {
+      vertical-align: middle !important;
+    }
   </style>
 </head>
 <body>
   <div id="app" class="container">
     <h1>ショッピングカート</h1>
-    <div class="row" v-for="item in items">
-      <div class="contents">
-        <div>
-          <img :src="item.image">
+    <div class="flex-container">
+      <!-- 一覧表示 -->
+      <div class="flex-item">
+        <div class="row" v-for="item in items">
+          <div class="contents">
+            <div>
+              <img :src="item.image">
+            </div>
+            <div>{{ item.title }}</div>
+            <div>{{ item.price }}</div>
+            <div>{{ item.qty }}</div>
+            <button class="button button-outline">カートに入れる</button>
+          </div>
         </div>
-        <div>{{ item.title }}</div>
-        <div>{{ item.price }}</div>
-        <div>{{ item.qty }}</div>
-        <button class="button button-outline">カートに入れる</button>
+      </div>
+      <!-- カート-->
+      <div class="cart">
+        <div class="summary">
+          <table class="table table-cart">
+            <tr>
+              <th colspan="4"><i class="fas fa-shopping-cart"></i>ショッピングカート</th>
+            </tr>
+            <tr v-for="(item, index) in cartItems">
+              <td>{{ item.title }}</td>
+              <td>{{ item.qty }}点</td>
+              <td>{{ item.price }}</td>
+              <td>
+                <a href="#" @click.stop.prevent="remove(index)"><i class="fas fa-times-circle"></i>削除</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">合計</td>
+              <td colspan="2">{{ total }}</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -79,6 +129,15 @@
       data: {
         cartItems: [],
         items: products
+      },
+      computed: {
+        total() {
+          let total = 0;
+          this.cartItems.forEach(item => {
+            total += (item.price * item.qty);
+          });
+          return total;
+        }
       },
     });
   </script>
