@@ -82,7 +82,7 @@
             <div>{{ item.title }}</div>
             <div>{{ item.price }}</div>
             <div>{{ item.qty }}</div>
-            <button class="button button-outline">カートに入れる</button>
+            <button @click="addToCart(item)" class="button button-outline">カートに入れる</button>
           </div>
         </div>
       </div>
@@ -139,6 +139,24 @@
           return total;
         }
       },
+      methods: {
+        addToCart(itemToAdd) {
+          let existence = false;
+
+          this.cartItems.forEach(item => {
+            if (item.id === itemToAdd.id) {
+              existence = true;
+              item.qty += Number(itemToAdd.qty);
+            }
+          });
+
+          if (existence === false) {
+            this.cartItems.push(Vue.util.extend({}, itemToAdd));
+          }
+
+          itemToAdd.qty = 1;
+        },
+      }
     });
   </script>
 </body>
