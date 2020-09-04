@@ -8,9 +8,60 @@
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <style>
+    .flex-item {
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .contents {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px gray solid;
+      padding: 10px;
+    }
+
+    .contents *:nth-child(1) {
+      width: 130px;
+      height: 150px;
+    }
+
+    .contents *:nth-child(2) {
+      width: 120px;
+    }
+
+    .contents *:nth-child(3) {
+      width: 100px;
+    }
+
+    .contents *:nth-child(4) {
+      width: 70px;
+    }
+
+    .row {
+      display: block;
+      margin: 10px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <div id="app" class="container">
+    <h1>ショッピングカート</h1>
+    <div class="row" v-for="item in items">
+      <div class="contents">
+        <div>
+          <img :src="item.image">
+        </div>
+        <div>{{ item.title }}</div>
+        <div>{{ item.price }}</div>
+        <div>{{ item.qty }}</div>
+        <button class="button button-outline">カートに入れる</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     const products = [
       { id: 1, title: '商品1', price: 500, qty: 1, image: './images2/cart/thumbnail_01.jpg' },
@@ -23,13 +74,13 @@
       { id: 8, title: '商品8', price: 20, qty: 1, image: './images2/cart/thumbnail_08.jpg' },
     ];
 
-    var vm = new vue({
+    var vm = new Vue({
       el: '#app',
       data: {
         cartItems: [],
         items: products
       },
-    })
+    });
   </script>
 </body>
 </html>
