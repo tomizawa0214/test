@@ -80,8 +80,7 @@
               <img :src="item.image">
             </div>
             <div>{{ item.title }}</div>
-            <div>{{ item.price }}</div>
-            <div>{{ item.qty }}</div>
+            <div>{{ item.price | formatCurrency }}</div>
             <input v-model="item.qty" type="number" min="1">
             <button @click="addToCart(item)" class="button button-outline">カートに入れる</button>
           </div>
@@ -97,14 +96,14 @@
             <tr v-for="(item, index) in cartItems">
               <td>{{ item.title }}</td>
               <td>{{ item.qty }}点</td>
-              <td>{{ item.price }}</td>
+              <td>{{ item.price | formatCurrency }}</td>
               <td>
                 <a href="#" @click.stop.prevent="remove(index)"><i class="fas fa-times-circle"></i>削除</a>
               </td>
             </tr>
             <tr>
               <td colspan="2">合計</td>
-              <td colspan="2">{{ total }}</td>
+              <td colspan="2">{{ total | formatCurrency }}</td>
             </tr>
           </table>
         </div>
@@ -124,6 +123,11 @@
       { id: 7, title: '商品7', price: 9800, qty: 1, image: './images2/cart/thumbnail_07.jpg' },
       { id: 8, title: '商品8', price: 20, qty: 1, image: './images2/cart/thumbnail_08.jpg' },
     ];
+
+    // カンマ区切り
+    Vue.filter('formatCurrency', value => {
+      return '\xA5' + String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    });
 
     var vm = new Vue({
       el: '#app',
