@@ -5,13 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>診断コンテンツ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
     <style>
+      .container {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .answerList {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+      }
+
+      .answerList.start li {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .answerList li {
+        display: inline-block;
+        width: 48%;
+        text-align: center;
+      }
+
+      .answerList li a {
+        display: block;
+        padding: 20px;
+        border-radius: 4px;
+        background: #FF8C00;
+        font-weight: bold;
+        color: #FFF;
+      }
+
       .fade-enter-active {
-        transition: opacity 1s;
+        box-sizing: border-box;
+        width: 100%;
+        transition: all .8s ease;
+      }
+
+      .fade-leave-active {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        transition: all .8s ease;
+        opacity: 0;
       }
       
-      .fade-enter,
+      .fade-enter {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
       .fade-leave-to {
+        transform: translateX(100%);
         opacity: 0;
       }
     </style>
@@ -41,12 +93,8 @@
                   <b>質問.{{ q.num }}</b>
                   <p class="leadText" v-if="q">{{ q.sentence }}</p>
                   <ul class="answerList">
-                    <!-- <ul class="answerList"> -->
-                      <li>
-                        <a href="#" @click.prevent.stop="answer('yes')">はい</a>
-                        <a href="#" @click.prevent.stop="answer('num')">いいえ</a>
-                      </li>
-                    <!-- </ul> -->
+                    <li><a href="#" @click.prevent.stop="answer('yes')">はい</a></li>
+                    <li><a href="#" @click.prevent.stop="answer('num')">いいえ</a></li>
                   </ul>
                 </main>
               </transition>
