@@ -78,6 +78,17 @@
         sum: 0,
         questions: questions,
       },
+      computed: {
+        question() {
+          return questions.filter(q => q.num === this.status).shift()
+        },
+        result() {
+          return results.filter(a => this.sum >= a.min && this.sum <= a.max).shift()
+        },
+        isFinish() {
+          return this.status > questions.length
+        }
+      },
     })
   </script>
 </html>
