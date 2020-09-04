@@ -82,6 +82,7 @@
             <div>{{ item.title }}</div>
             <div>{{ item.price }}</div>
             <div>{{ item.qty }}</div>
+            <input v-model="item.qty" type="number" min="1">
             <button @click="addToCart(item)" class="button button-outline">カートに入れる</button>
           </div>
         </div>
@@ -156,6 +157,9 @@
 
           itemToAdd.qty = 1;
         },
+        remove(index) {
+          this.cartItems.splice(index, 1)
+        }
       }
     });
   </script>
