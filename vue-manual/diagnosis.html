@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+  
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,80 +16,111 @@
       }
     </style>
   </head>
+
   <body>
-    <section class="block">
-      <h1 class="block-title">ストレス診断</h1>
-      <div class="block-body">
-        <div class="conotents view">
-          <!-- 初期表示 -->
-          <transition name="fade">
-            <main class="main top-page" v-show="status === 0">
-              <p class="leadText">あなたのストレス度をチェックします。</p>
-              <ul class="answerList start">
-                <li>
-                  <a href="#" @click.prevent.stop="start" class="">スタート</a>
-                </li>
-              </ul>
-            </main>
-          </transition>
-          <!-- 質問表示 -->
-          <transition name="fade" v-for="q in questions">
-            <main class="main top-page" v-show="q.num === status">
-              <b>質問.{{ q.num }}</b>
-              <p class="leadText" v-if="q">{{ q.sentence }}</p>
-              <ul class="answerList">
-                <!-- <ul class="answerList"> -->
-                  <li>
-                    <a href="#" @click.prevent.stop="answer('yes')">はい</a>
-                    <a href="#" @click.prevent.stop="answer('num')">いいえ</a>
-                  </li>
-                <!-- </ul> -->
-              </ul>
-            </main>
-          </transition>
-          <!-- 診断結果 -->
-          <transition name="fade">
-            <main class="main top-page" v-show="isFinish">
-              <b>診断結果</b>
-              <p class="leadText">{{ result.sentence }}</p>
-              <a href="#" @click.prevent.stop="reset">最初からやり直す</a>
-            </main>
-          </transition>
-        </div>
-      </div>
-    </section>    
-  </body>
-  <script>
-    const questions = [
-      // num: 質問の番号 / point: yesをクリックした場合の加算ポイント / sentence: 質問内容
-      { num: 1, point: 1, sentence: '非常にたくさんの仕事をしなければならない'},
-      { num: 2, point: 2, sentence: '時間内に仕事が処理しきれない'},
-      { num: 3, point: 2, sentence: '高度な知識や技術が必要な仕事だ'},
-      { num: 4, point: 2, sentence: '自分のペースで仕事ができない'},
-      { num: 5, point: 3, sentence: '職場の雰囲気が悪い'},
-    ],
-    const result = [
-      { min: 0, max: 4, sentence: 'あなたはそれほどストレスを感じていません。'},
-      { min: 5, max: 7, sentence: '少しストレスを感じているようです。意識的にストレス対処に努めてください。'},
-      { min: 8, max: 10, sentence: '非常に多くのストレスを感じているようです。医師の診断を受けてください。'}
-    ]
-    var vm = new Vue({
-      data: {
-        status: 0,
-        sum: 0,
-        questions: questions,
-      },
-      computed: {
-        question() {
-          return questions.filter(q => q.num === this.status).shift()
+    <div id="app" class="container">
+      <main class="main">
+        <section class="block">
+          <h1 class="block-title">ストレス診断</h1>
+          <div class="block-body">
+            <div class="contents view">
+              <!-- 初期表示 -->
+              <transition name="fade">
+                <main class="main top-page" v-show="status === 0">
+                  <p class="leadText">あなたのストレス度をチェックします。</p>
+                  <ul class="answerList start">
+                    <li>
+                      <a href="#" @click.prevent.stop="start">スタート</a>
+                    </li>
+                  </ul>
+                </main>
+              </transition>
+              <!-- 質問表示 -->
+              <transition name="fade" v-for="q in questions">
+                <main class="main top-page" v-show="q.num === status">
+                  <b>質問.{{ q.num }}</b>
+                  <p class="leadText" v-if="q">{{ q.sentence }}</p>
+                  <ul class="answerList">
+                    <!-- <ul class="answerList"> -->
+                      <li>
+                        <a href="#" @click.prevent.stop="answer('yes')">はい</a>
+                        <a href="#" @click.prevent.stop="answer('num')">いいえ</a>
+                      </li>
+                    <!-- </ul> -->
+                  </ul>
+                </main>
+              </transition>
+              <!-- 診断結果 -->
+              <transition name="fade">
+                <main class="main top-page" v-show="isFinish">
+                  <b>診断結果</b>
+                  <p class="leadText">{{ result.sentence }}</p>
+                  <a href="#" @click.prevent.stop="reset">最初からやり直す</a>
+                </main>
+              </transition>
+            </div>
+          </div>
+        </section>    
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      const questions = [
+        // num: 質問の番号 / point: yesをクリックした場合の加算ポイント / sentence: 質問内容
+        { num: 1, point: 1, sentence: '非常にたくさんの仕事をしなければならない'},
+        { num: 2, point: 2, sentence: '時間内に仕事が処理しきれない'},
+        { num: 3, point: 2, sentence: '高度な知識や技術が必要な仕事だ'},
+        { num: 4, point: 2, sentence: '自分のペースで仕事ができない'},
+        { num: 5, point: 3, sentence: '職場の雰囲気が悪い'},
+      ]
+      const results = [
+        { min: 0, max: 4, sentence: 'あなたはそれほどストレスを感じていません。'},
+        { min: 5, max: 7, sentence: '少しストレスを感じているようです。意識的にストレス対処に努めてください。'},
+        { min: 8, max: 10, sentence: '非常に多くのストレスを感じているようです。医師の診断を受けてください。'}
+      ]
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          status: 0,
+          sum: 0,
+          questions: questions,
         },
-        result() {
-          return results.filter(a => this.sum >= a.min && this.sum <= a.max).shift()
+        computed: {
+          question() {
+            return questions.filter(q => q.num === this.status).shift()
+          },
+          result() {
+            return results.filter(a => this.sum >= a.min && this.sum <= a.max).shift()
+          },
+          isFinish() {
+            return this.status > questions.length
+          }
         },
-        isFinish() {
-          return this.status > questions.length
+        methods: {
+          start() {
+            this.status = 1;
+          },
+          reset() {
+            this.status = 0;
+            this.sum = 0;
+          },
+          answer(type) {
+            // 現在の質問を取得
+            let question = questions.filter((q) => {
+              return q.num === this.status
+            }).shift()
+
+            if (type === 'yes') {
+              // 「はい」がクリックされた時に合計ポイントを加算
+              this.sum = this.sum + question.point;
+            }
+
+            this.status++;
+          }
         }
-      },
-    })
-  </script>
+      });
+    </script>
+  </body>
 </html>
