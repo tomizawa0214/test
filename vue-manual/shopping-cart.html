@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ショッピングカート</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+    const products = [
+      { id: 1, title: '商品1', price: 500, qty: 1, image: './images2/cart/thumbnail_01.jpg' },
+      { id: 2, title: '商品2', price: 1000, qty: 1, image: './images2/cart/thumbnail_02.jpg' },
+      { id: 3, title: '商品3', price: 350, qty: 1, image: './images2/cart/thumbnail_03.jpg' },
+      { id: 4, title: '商品4', price: 2000, qty: 1, image: './images2/cart/thumbnail_04.jpg' },
+      { id: 5, title: '商品5', price: 1500, qty: 1, image: './images2/cart/thumbnail_05.jpg' },
+      { id: 6, title: '商品6', price: 50, qty: 1, image: './images2/cart/thumbnail_06.jpg' },
+      { id: 7, title: '商品7', price: 9800, qty: 1, image: './images2/cart/thumbnail_07.jpg' },
+      { id: 8, title: '商品8', price: 20, qty: 1, image: './images2/cart/thumbnail_08.jpg' },
+    ];
+
+    var vm = new vue({
+      el: '#app',
+      data: {
+        cartItems: [],
+        items: products
+      },
+    })
+  </script>
+</body>
+</html>
