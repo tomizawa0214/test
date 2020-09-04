@@ -72,5 +72,12 @@
       { min: 5, max: 7, sentence: '少しストレスを感じているようです。意識的にストレス対処に努めてください。'},
       { min: 8, max: 10, sentence: '非常に多くのストレスを感じているようです。医師の診断を受けてください。'}
     ]
+    var vm = new Vue({
+      data: {
+        status: 0,
+        sum: 0,
+        questions: questions,
+      },
+    })
   </script>
 </html>
