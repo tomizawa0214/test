@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>もっと見る</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <main class="main">
+        <article v-for="article in articles" class="card">
+          <img v-bind:src="article.thumbnail">
+        </article>
+      </main>
+      <button class="button" v-on:click="load" v-if="hasNext">もっと見る</button>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    const thumbnailList = {
+      'count': 10,
+      'articles': [
+        {'thumbnail': './images/load-more/thumbnail_01.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_02.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_03.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_04.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_05.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_06.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_07.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_08.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_09.jpg'},
+        {'thumbnail': './images/load-more/thumbnail_10.jpg'},
+      ]
+    }
+    const loadNum = 3;
+
+    var vm = new Vue({
+      data: {
+        articles: [],
+        hasNext: true
+      },
+    })
+  </script>
+</html>
