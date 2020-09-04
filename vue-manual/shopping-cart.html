@@ -89,23 +89,7 @@
       <!-- カート-->
       <div class="cart">
         <div class="summary">
-          <table class="table table-cart">
-            <tr>
-              <th colspan="4"><i class="fas fa-shopping-cart"></i>ショッピングカート</th>
-            </tr>
-            <tr v-for="(item, index) in cartItems">
-              <td>{{ item.title }}</td>
-              <td>{{ item.qty }}点</td>
-              <td>{{ item.price | formatCurrency }}</td>
-              <td>
-                <a href="#" @click.stop.prevent="remove(index)"><i class="fas fa-times-circle"></i>削除</a>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">合計</td>
-              <td colspan="2">{{ total | formatCurrency }}</td>
-            </tr>
-          </table>
+          <shopping-cart :items="cartItems"></shopping-cart>
         </div>
       </div>
     </div>
@@ -129,20 +113,48 @@
       return '\xA5' + String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     });
 
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        cartItems: [],
-        items: products
-      },
+    Vue.component('shopping-cart', {
+      template:`
+        <table class="table table-cart">
+          <tr>
+            <th colspan="4"><i class="fas fa-shopping-cart"></i>ショッピングカート</th>
+          </tr>
+          <tr v-for="(item, index) in items">
+            <td>{{ item.title }}</td>
+            <td>{{ item.qty }}点</td>
+            <td>{{ item.price | formatCurrency }}</td>
+            <td>
+              <a href="#" @click.stop.prevent="remove(index)"><i class="fas fa-times-circle"></i>削除</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">合計</td>
+            <td colspan="2">{{ total | formatCurrency }}</td>
+          </tr>
+        </table>
+        `,
+      props: ['items'],
       computed: {
         total() {
           let total = 0;
-          this.cartItems.forEach(item => {
+          this.items.forEach(item => {
             total += (item.price * item.qty);
           });
           return total;
         }
+      },
+      methods: {
+        remove(index) {
+          this.items.splice(index, 1)
+        }
+      }
+    })
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        cartItems: [], //カート追加済みの商品
+        items: products //商品一覧
       },
       methods: {
         addToCart(itemToAdd) {
@@ -151,7 +163,7 @@
           this.cartItems.forEach(item => {
             if (item.id === itemToAdd.id) {
               existence = true;
-              item.qty += Number(itemToAdd.qty);
+              item.qty += itemToAdd.qty;
             }
           });
 
@@ -160,12 +172,9 @@
           }
 
           itemToAdd.qty = 1;
-        },
-        remove(index) {
-          this.cartItems.splice(index, 1)
         }
       }
-    });
+    })
   </script>
 </body>
 </html>
