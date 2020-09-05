@@ -97,74 +97,130 @@
         justify-content: center;
       }
 
+      .modal-btn i {
+        line-height: 2;
+      }
+
       .modal-btn:hover,
       .modal-btn:focus,
       .modal-btn:active {
         border-color: #FFF;
       }
+
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity .5s ease;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+
+      .slide-enter-active,
+      .slide-leave-active {
+        transition: top .5s ease;
+        top: 0;
+      }
+
+      .slide-enter {
+        top: -100px;
+      }
+
+      .slide-leave-to {
+        top: 300px;
+      }
     </style>
   </head>
 
   <body>
-    <ul class="gallery">
-      <li class="gallery-item">
-        <a href="./images2/lightbox/01.jpg">
-          <img src="./images2/lightbox/01_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-      <li class="gallery-item">
-        <a href="./images2/lightbox/02.jpg">
-          <img src="./images2/lightbox/02_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-      <li class="gallery-item">
-        <a href="./images2/lightbox/03.jpg">
-          <img src="./images2/lightbox/03_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-      <li class="gallery-item">
-        <a href="./images2/lightbox/04.jpg">
-          <img src="./images2/lightbox/04_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-      <li class="gallery-item">
-        <a href="./images2/lightbox/05.jpg">
-          <img src="./images2/lightbox/05_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-      <li class="gallery-item">
-        <a href="./images2/lightbox/06.jpg">
-          <img src="./images2/lightbox/06_thumbnail.jpg">
-          <span class="gallery-item-hover">
-            <i class="fas fa-search-plus"></i>
-        </span>
-        </a>
-      </li>
-    </ul>
-    <div class="bg">
-      <div class="modal">
-        <img src="./images2/lightbox/01.jpg">
-        <button class="modal-btn">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
+    <div id="app" class="container">
+      <h1>Light Box</h1>
+      <ul class="gallery">
+        <li class="gallery-item">
+          <a href="./images2/lightbox/01.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/01_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+        <li class="gallery-item">
+          <a href="./images2/lightbox/02.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/02_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+        <li class="gallery-item">
+          <a href="./images2/lightbox/03.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/03_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+        <li class="gallery-item">
+          <a href="./images2/lightbox/04.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/04_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+        <li class="gallery-item">
+          <a href="./images2/lightbox/05.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/05_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+        <li class="gallery-item">
+          <a href="./images2/lightbox/06.jpg" @click.prevent="zoom">
+            <img src="./images2/lightbox/06_thumbnail.jpg">
+            <span class="gallery-item-hover">
+              <i class="fas fa-search-plus"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <transition name="fade">
+        <div class="bg" @click.self="close" v-show="isShow">
+          <transition name="slide" @after-leave="afterLeave">
+            <div class="modal" v-show="isShow">
+              <img :src="src">
+              <button class="modal-btn" @click="close">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </transition>
+        </div>
+      </transition>
     </div>
-
+      
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          src: null,
+          isShow: false
+        },
+        methods: {
+          zoom(e) {
+            this.src = e.currentTarget.getAttribute('href');
+            this.isShow = true;
+          },
+          close() {
+            this.isShow = false;
+          },
+          afterLeave() {
+            this.src = null;
+          }
+        }
+      })
+    </script>
   </body>
 </html>
