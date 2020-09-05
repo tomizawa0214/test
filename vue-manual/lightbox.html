@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Box</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+      .gallery {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .gallery-item {
+        width: 32%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+      }
+
+      .gallery-item:nth-child(3n+1) {
+        margin-left: 0;
+      }
+
+      .gallery-item a {
+        display: block;
+        position: relative;
+      }
+
+      .gallery-item img {
+        vertical-align: bottom;
+      }
+
+      .gallery-item-hover {
+        display: flex;
+        background: rgba(0, 0, 0, .6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .2s;
+      }
+
+      .gallery-item-hover:hover {
+        opacity: 1;
+      }
+
+      .gallery-item-hover i {
+        color: #FFF;
+        font-size: 40px;
+      }
+
+      .bg {
+        position: fixed;
+        display: flex;
+        background: rgba(0, 0, 0, .8);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .modal {
+        position: relative;
+        cursor: default;
+        max-width: 90%;
+      }
+
+      .modal img {
+        border: 3px solid #FFF;
+      }
+
+      .modal-btn {
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        background: #111;
+        color: #FFF;
+        border-radius: 50%;
+        font-size: 20px;
+        border: 3px solid #FFF;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .modal-btn:hover,
+      .modal-btn:focus,
+      .modal-btn:active {
+        border-color: #FFF;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="gallery">
+      <li class="gallery-item">
+        <a href="./images2/lightbox/01.jpg">
+          <img src="./images2/lightbox/01_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+      <li class="gallery-item">
+        <a href="./images2/lightbox/02.jpg">
+          <img src="./images2/lightbox/02_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+      <li class="gallery-item">
+        <a href="./images2/lightbox/03.jpg">
+          <img src="./images2/lightbox/03_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+      <li class="gallery-item">
+        <a href="./images2/lightbox/04.jpg">
+          <img src="./images2/lightbox/04_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+      <li class="gallery-item">
+        <a href="./images2/lightbox/05.jpg">
+          <img src="./images2/lightbox/05_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+      <li class="gallery-item">
+        <a href="./images2/lightbox/06.jpg">
+          <img src="./images2/lightbox/06_thumbnail.jpg">
+          <span class="gallery-item-hover">
+            <i class="fas fa-search-plus"></i>
+        </span>
+        </a>
+      </li>
+    </ul>
+    <div class="bg">
+      <div class="modal">
+        <img src="./images2/lightbox/01.jpg">
+        <button class="modal-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </body>
+</html>
