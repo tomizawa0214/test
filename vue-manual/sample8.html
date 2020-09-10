@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カウントアップ</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="handleClick">カウントアップ</button>
+      <button v-on:click="show=!show">表示/非表示</button>
+      <span ref="count" v-if="show">0</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          show: true
+        },
+        methods: {
+          handleClick() {
+            var count = this.$refs.count
+            if (count) {
+              count.innerText = parseInt(count.innerText,10) + 1
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
