@@ -1,0 +1,30 @@
+{
+  "name": "cr-vue",
+  "version": "1.0.0",
+  "description": "docs",
+  "author": "mio",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mio3io/cr-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mio3io/cr-vue/issues"
+  },
+  "homepage": "https://github.com/mio3io/cr-vue#readme",
+  "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.4.0",
+    "vuepress": "^1.4.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "vue-script2": "^2.1.0",
+    "vuex": "^3.1.3"
+  }
+}
