@@ -16,9 +16,11 @@
           {{ item.name }} {{ item.price }}円
         </li>
       </ul>
+      <button v-on:click="order=!order">切り替え</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
     <script>
       new Vue({
         el: '#app',
@@ -34,7 +36,8 @@
             { id: 3, name: 'いちご', price: 400 },
             { id: 4, name: 'おれんじ', price: 300 },
             { id: 5, name: 'めろん', price: 500 },
-          ]
+          ],
+          order: false
         },
         computed: {
           // budget以下のリストを返す算出プロパティ
@@ -43,10 +46,14 @@
               return el.price <= this.budget
             })
           },
-          // matchedで返ったデータをlimit件返す算出プロパティ
+          // sortedを新しく追加
+          sorted() {
+            return _.orderBy(this.matched, 'price', this.order ? 'desc': 'asc')
+          },
+          // limitedで使用するリストをsortedに変更
           limited() {
-            return this.matched.slice(0, this.limit)
-          }
+            return this.sorted.slice(0, this.limit)
+          },
         }
       })
     </script>
