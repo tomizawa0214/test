@@ -21,6 +21,14 @@
           <button v-on:click="doRemove(index)">モンスターを削除</button>
         </li>
       </ul>
+      <ul>
+        <li v-for="(item, index) in list" v-bind:key="item.id" v-if="item.hp">
+          ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+          <span v-if="item.hp < 50">瀕死！</span>
+          <!-- ボタンはv-for内に作成 -->
+          <button v-on:click="doAttack(index)">攻撃する</button>
+        </li>
+      </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -57,6 +65,10 @@
           doRemove(index) {
             // 受け取ったインデックスの位置から1個要素を削除
             this.list.splice(index, 1)
+          },
+          // 攻撃ボタンをクリックしたときのハンドラ
+          doAttack(index) {
+            this.list[index].hp -= 10 // HPを減らすｇｇ
           }
         }
       })
