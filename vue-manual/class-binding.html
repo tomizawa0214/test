@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classバインディング①</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .bg-blue {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 :class="classObject">Hello</h1>
+      <button @click="isActive = !isActive">切り替え</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          isActive: true
+        },
+        computed: {
+          classObject() {
+            return {
+              // 算出プロパティではthisが必要
+              red: this.isActive,
+              // ケバブケース記法では''で囲う必要あり
+              'bg-blue': !this.isActive
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
