@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント修飾子</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-on:mousemove="changeMousePosition($event, 10)">マウスを乗せてください
+        <!-- 親のイベントを呼び出さない（伝搬を止める） -->
+        <a v-on:mousemove.stop href="https://google.com">Google</a>
+        <!-- aタグデフォルトのクリックイベントを止める-->
+        <a v-on:click.prevent href="https://google.com">Google</a>
+      </p>
+      <p>X: {{ x }}, Y: {{ y }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          x: 0,
+          y: 0
+        },
+        methods: {
+          changeMousePosition(event, divideNumber) {
+            this.x = event.clientX / divideNumber;
+            this.y = event.clientY / divideNumber;
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
