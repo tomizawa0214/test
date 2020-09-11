@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算出プロパティ</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ counter }}</p>
+      <button @click="counter += 1">+1</button>
+      <p>{{ otherCounter }}</p>
+      <button @click="otherCounter += 1">別の+1</button>
+      <p>{{ lessThanThreeComputed }}</p>
+      <p>{{ lessThanThreeMethod() }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+          otherCounter: 0
+        },
+        computed: {
+          // 参照先の値（counter）が変更される毎に実行される
+          lessThanThreeComputed() {
+            console.log('Computed')
+            return this.counter > 3 ? '3より上' : '3以下'
+          }
+        },
+        methods: {
+          // テンプレートが再描画される毎に実行される
+          lessThanThreeMethod() {
+            console.log('Method')
+            return this.counter > 3 ? '3より上' : '3以下'
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
