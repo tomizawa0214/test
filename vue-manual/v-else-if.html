@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条件分岐</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v-else-ifやv-elseはv-if文の直後に置く必要がある -->
+    <p v-if="ok">OK!</p>
+    <p v-else-if="maybeOk">maybe OK!</p>
+    <p v-else>Not OK...</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        ok: true,
+        maybeOk: true
+      }
+    })
+  </script>
+</body>
+</html>
