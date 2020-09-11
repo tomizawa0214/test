@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウォッチャー</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ counter }}</p>
+      <button @click="counter += 1">+1</button>
+      <p>{{ lessThanThree }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0
+        },
+        computed: {
+          // 参照先の値（counter）が変更される毎に実行される
+          lessThanThree() {
+            return this.counter > 3 ? '3より上' : '3以下'
+          }
+        },
+        watch: {
+          counter() {
+            setTimeout(() => {
+              console.log("ウォッチャー")
+              this.counter = 0;
+            }, 3000)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
