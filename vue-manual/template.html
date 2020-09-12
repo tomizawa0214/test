@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テンプレートタグ</title>
+</head>
+<body>
+  <div id="app">
+    <!-- templateタグでグループ化。DOMには表示されない -->
+    <template>
+      <p v-if="ok">Good morning!</p>
+      <p v-if="ok">Hello!</p>
+      <p v-if="ok">Good bye!</p>
+    </template>
+    <button @click="ok = !ok">ボタン</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        ok: 25
+      }
+    })
+  </script>
+</body>
+</html>
