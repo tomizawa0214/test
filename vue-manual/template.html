@@ -8,10 +8,10 @@
 <body>
   <div id="app">
     <!-- templateタグでグループ化。DOMには表示されない -->
-    <template>
-      <p v-if="ok">Good morning!</p>
-      <p v-if="ok">Hello!</p>
-      <p v-if="ok">Good bye!</p>
+    <template v-if="ok">
+      <p>Good morning!</p>
+      <p>Hello!</p>
+      <p>Good bye!</p>
     </template>
     <button @click="ok = !ok">ボタン</button>
   </div>
