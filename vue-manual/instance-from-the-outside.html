@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外側からインスタンスにアクセスする方法</title>
+  </head>
+  <body>
+    <div id="app1">
+      <p>{{ message }}</p>
+    </div>
+    <div id="app2">
+      <p>{{ message }}</p>
+      <button @click="changeMessage1">インスタンス1のmessageを変更</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var vm1 = new Vue({
+        el: '#app1',
+        data: {
+          message: 'インスタンス1'
+        }
+      })
+
+      var vm２ = new Vue({
+        el: '#app2',
+        data: {
+          message: 'インスタンス2'
+        },
+        methods: {
+          changeMessage1() {
+            vm1.message = 'インスタンス2から変えました'
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
