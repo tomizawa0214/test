@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$mountメソッド</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>{{ name }}</p>
+      <button @click="message = 'ボタンから変更しました'">変更</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      // dataを定義しておくと後からプロパティを変更してもリアクティブ要素になる
+      var data = {
+        message: 'こんにちは',
+        name: 'じゅん',
+      }
+
+      var vm = new Vue({
+        data: data
+      })
+
+      // elの代わり。動的に変更したい場合等に使用
+      vm.$mount('#app')
+    </script>
+  </body>
+</html>
