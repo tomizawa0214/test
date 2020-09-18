@@ -129,6 +129,26 @@
         </div>
       `
     })
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        name: '',
+        zip: '',
+        prefecture: '',
+        address: '',
+        building: '',
+        interests: [''],
+        interestsMaxCount: 3,
+        errors: {
+          name: [],
+          zip: [],
+          prefecture: [],
+          address: [],
+          interests: []
+        }
+      },
+    })
   </script>
 </body>
 </html>
