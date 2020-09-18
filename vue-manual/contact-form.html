@@ -170,6 +170,39 @@
           },
           removeInterests(index) {
             this.interests.splice(index, 1);
+          },
+          validate() {
+            var errors = {
+              name: [],
+              zip: [],
+              prefecture: [],
+              address: [],
+              interests: []
+            };
+            if (!this.name) {
+              errors.name.push('必須項目が入力されていません');
+            } else if (this.name.length > 20) {
+              errors.name.push('20文字以内で入力してください');
+            }
+            if (!this.zip) {
+              errors.zip.push('必須項目が入力されていません');
+            } else {
+              if (!this.zip.match(/\d{3}-?\d{4}/)) {
+                errors.zip.push('書式が正しくありません')
+              }
+            }
+            if (!this.prefecture) {
+              errors.prefecture.push('必須項目が選択されていません')
+            }
+            if (!this.address) {
+              errors.address.push('必須項目が入力されていません')
+            } else if (this.address.length > 40) {
+              errors.address.push('40文字以内で入力してください')
+            }
+            if (this.interests.length <= 1 && !this.interests[0]) {
+              errors.interests.push('必須項目が入力されていません')
+            }
+            this.errors = errors;
           }
         },
         computed: {

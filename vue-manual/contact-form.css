@@ -43,8 +43,6 @@ body {
   background: #83fad2;
   padding: 40px 0;
   color: #555;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 
 .block {
