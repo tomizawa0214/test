@@ -3,16 +3,23 @@
 	<title>技術メモ</title>
 </head>
 <body>
-	<div id="box"></div>
+	<div id="wrap"></div>
 	
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
-		$(function(){
-            $("#box").load("common.html #app");
-            
-            // NG
-			// $("#box").load("common.html #app2");
-		});
-	</script>
+        $(function(){
+            $.ajax({
+                url: 'common.html',    // 表示させたいコンテンツがあるページURL
+                cache: false,
+                datatype: 'html',
+                success: function(html) {
+                    var h = $(html).find('#hoge');    // 表示させたいコンテンツの要素を指定
+                    var i = $(html).find('#app');    // 表示させたいコンテンツの要素を指定
+                    $('#wrap').append(h);    // append関数で指定先の要素へ出力
+                    $('#wrap').append(i);    // append関数で指定先の要素へ出力
+                }
+            });
+        });
+    </script>
 </body>
 </html>
