@@ -1,0 +1,123 @@
+.modal_prev,
+.modal_next
+{
+    /* display: none !important; */
+    position: fixed !important;
+    /* margin-top: 30px !important; */
+    width: 65px !important;
+    height: 65px !important;
+    z-index: 9999 !important;
+    /* top: 70%; */
+    cursor: pointer;
+    background-image: url(/slide_mark.png);
+    background-size: 65px auto;
+}
+
+.modal_prev_block,
+.modal_next_block
+{
+    display: block !important;
+}
+
+.modal_prev
+{
+    left: 20% !important;
+    transform: translate(-50%, -50%);
+}
+
+.modal_next
+{
+    right: 20% !important;
+    transform: translate(50%, -50%) scale(-1, 1);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+}
+
+.slider2
+{
+    position: fixed !important;
+    width: 60% !important;
+    height: auto !important;
+    /* width: 100% !important; */
+    /* min-height: 100vh; */
+    /* z-index: 9999 !important; */
+}
+
+.modal_wrapper
+{
+    position: fixed !important;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    display: none !important;
+    /* transform: none !important; */
+}
+
+.modal_wrapper_block
+{
+    display: flex !important;
+}
+
+.modal_bg
+{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+}
+
+.modal_content
+{
+    position: fixed !important;
+    z-index: 9999;
+    width: 60% !important;
+    height: auto !important;
+    /* top: 50%;
+    left: 50%; */
+    padding: 30px;
+    /* transform: translate(-50%,-50%); */
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .75);
+}
+
+/* .modal_hide
+{
+    display: none;
+} */
+
+.modal_content_head
+{
+    padding-bottom: 10px;
+    border-bottom: 2px #585757 dashed;
+}
+
+.modal_content_head > p
+{
+    margin-left: 50px;
+    line-height: 35px;
+    font-size: 2.2rem;
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    color: #954924;
+}
+
+.modal_slide_page
+{
+    display: block !important;
+}
+
+.add_favorite_list > img,
+.look_favorite_list > img
+{
+    display: inline-block;
+    vertical-align: -1px;
+    padding-left: 10px;
+}
