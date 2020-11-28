@@ -1,0 +1,510 @@
+body,
+.bgImage {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bgImage {
+  position: absolute;
+  background-image: url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-0.3.5&s=e20bc3d490c974d9ea190e05c47962f5&auto=format&fit=crop&w=634&q=80);
+  background-size: cover;
+  background-position: top;
+  -webkit-filter: grayscale(70%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+  z-index: -1;
+}
+
+.blobCont {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blob:nth-child(1) {
+  -webkit-animation: move1 20s infinite linear;
+          animation: move1 20s infinite linear;
+}
+
+@-webkit-keyframes move1 {
+  from {
+    -webkit-transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+            transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+  }
+  to {
+    -webkit-transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+            transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+  }
+}
+
+@keyframes move1 {
+  from {
+    -webkit-transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+            transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+  }
+  to {
+    -webkit-transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+            transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+  }
+}
+
+.blob:nth-child(2) {
+  -webkit-animation: move2 20s infinite linear;
+          animation: move2 20s infinite linear;
+}
+
+@-webkit-keyframes move2 {
+  from {
+    -webkit-transform: rotate(180deg) translate(200px, 0.1px) rotate(-180deg);
+            transform: rotate(180deg) translate(200px, 0.1px) rotate(-180deg);
+  }
+  to {
+    -webkit-transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+            transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+  }
+}
+
+@keyframes move2 {
+  from {
+    -webkit-transform: rotate(180deg) translate(200px, 0.1px) rotate(-180deg);
+            transform: rotate(180deg) translate(200px, 0.1px) rotate(-180deg);
+  }
+  to {
+    -webkit-transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+            transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+  }
+}
+
+.blob:nth-child(3) {
+  -webkit-animation: move3 20s infinite linear;
+          animation: move3 20s infinite linear;
+}
+
+@-webkit-keyframes move3 {
+  from {
+    -webkit-transform: rotate(270deg) translate(200px, 0.1px) rotate(-270deg);
+            transform: rotate(270deg) translate(200px, 0.1px) rotate(-270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+            transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+  }
+}
+
+@keyframes move3 {
+  from {
+    -webkit-transform: rotate(270deg) translate(200px, 0.1px) rotate(-270deg);
+            transform: rotate(270deg) translate(200px, 0.1px) rotate(-270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+            transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+  }
+}
+
+.blob:nth-child(4) {
+  -webkit-animation: move4 20s infinite linear;
+          animation: move4 20s infinite linear;
+}
+
+@-webkit-keyframes move4 {
+  from {
+    -webkit-transform: rotate(360deg) translate(200px, 0.1px) rotate(-360deg);
+            transform: rotate(360deg) translate(200px, 0.1px) rotate(-360deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+            transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+  }
+}
+
+@keyframes move4 {
+  from {
+    -webkit-transform: rotate(360deg) translate(200px, 0.1px) rotate(-360deg);
+            transform: rotate(360deg) translate(200px, 0.1px) rotate(-360deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+            transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+  }
+}
+
+.blob:nth-child(5) {
+  -webkit-animation: move5 20s infinite linear;
+          animation: move5 20s infinite linear;
+}
+
+@-webkit-keyframes move5 {
+  from {
+    -webkit-transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+            transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+  }
+  to {
+    -webkit-transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+            transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+  }
+}
+
+@keyframes move5 {
+  from {
+    -webkit-transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+            transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+  }
+  to {
+    -webkit-transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+            transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+  }
+}
+
+.blob:nth-child(6) {
+  -webkit-animation: move6 20s infinite linear;
+          animation: move6 20s infinite linear;
+}
+
+@-webkit-keyframes move6 {
+  from {
+    -webkit-transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+            transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+  }
+  to {
+    -webkit-transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+            transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+  }
+}
+
+@keyframes move6 {
+  from {
+    -webkit-transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+            transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+  }
+  to {
+    -webkit-transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+            transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+  }
+}
+
+.blob:nth-child(7) {
+  -webkit-animation: move7 20s infinite linear;
+          animation: move7 20s infinite linear;
+}
+
+@-webkit-keyframes move7 {
+  from {
+    -webkit-transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+            transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+  }
+  to {
+    -webkit-transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+            transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+  }
+}
+
+@keyframes move7 {
+  from {
+    -webkit-transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+            transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+  }
+  to {
+    -webkit-transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+            transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+  }
+}
+
+.blob:nth-child(8) {
+  -webkit-animation: move8 20s infinite linear;
+          animation: move8 20s infinite linear;
+}
+
+@-webkit-keyframes move8 {
+  from {
+    -webkit-transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+            transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+  }
+  to {
+    -webkit-transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+            transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+  }
+}
+
+@keyframes move8 {
+  from {
+    -webkit-transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+            transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+  }
+  to {
+    -webkit-transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+            transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+  }
+}
+
+.blob:nth-child(9) {
+  -webkit-animation: move9 20s infinite linear;
+          animation: move9 20s infinite linear;
+}
+
+@-webkit-keyframes move9 {
+  from {
+    -webkit-transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+            transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+  }
+  to {
+    -webkit-transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+            transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+  }
+}
+
+@keyframes move9 {
+  from {
+    -webkit-transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+            transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+  }
+  to {
+    -webkit-transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+            transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+  }
+}
+
+.blob:nth-child(10) {
+  -webkit-animation: move10 20s infinite linear;
+          animation: move10 20s infinite linear;
+}
+
+@-webkit-keyframes move10 {
+  from {
+    -webkit-transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+            transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+  }
+  to {
+    -webkit-transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+            transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+  }
+}
+
+@keyframes move10 {
+  from {
+    -webkit-transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+            transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+  }
+  to {
+    -webkit-transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+            transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+  }
+}
+
+.blob:nth-child(11) {
+  -webkit-animation: move11 20s infinite linear;
+          animation: move11 20s infinite linear;
+}
+
+@-webkit-keyframes move11 {
+  from {
+    -webkit-transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+            transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+  }
+  to {
+    -webkit-transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+            transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+  }
+}
+
+@keyframes move11 {
+  from {
+    -webkit-transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+            transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+  }
+  to {
+    -webkit-transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+            transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+  }
+}
+
+.blob:nth-child(12) {
+  -webkit-animation: move12 20s infinite linear;
+          animation: move12 20s infinite linear;
+}
+
+@-webkit-keyframes move12 {
+  from {
+    -webkit-transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+            transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+  }
+  to {
+    -webkit-transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+            transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+  }
+}
+
+@keyframes move12 {
+  from {
+    -webkit-transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+            transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+  }
+  to {
+    -webkit-transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+            transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+  }
+}
+
+.blob:nth-child(13) {
+  -webkit-animation: move13 20s infinite linear;
+          animation: move13 20s infinite linear;
+}
+
+@-webkit-keyframes move13 {
+  from {
+    -webkit-transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+            transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+  }
+  to {
+    -webkit-transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+            transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+  }
+}
+
+@keyframes move13 {
+  from {
+    -webkit-transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+            transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+  }
+  to {
+    -webkit-transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+            transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+  }
+}
+
+.blob:nth-child(14) {
+  -webkit-animation: move14 20s infinite linear;
+          animation: move14 20s infinite linear;
+}
+
+@-webkit-keyframes move14 {
+  from {
+    -webkit-transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+            transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+  }
+  to {
+    -webkit-transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+            transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+  }
+}
+
+@keyframes move14 {
+  from {
+    -webkit-transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+            transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+  }
+  to {
+    -webkit-transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+            transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+  }
+}
+
+.blob:nth-child(15) {
+  -webkit-animation: move15 20s infinite linear;
+          animation: move15 20s infinite linear;
+}
+
+@-webkit-keyframes move15 {
+  from {
+    -webkit-transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+            transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+  }
+  to {
+    -webkit-transform: rotate(1710deg) translate(200px, 0.1px) rotate(-1710deg);
+            transform: rotate(1710deg) translate(200px, 0.1px) rotate(-1710deg);
+  }
+}
+
+@keyframes move15 {
+  from {
+    -webkit-transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+            transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+  }
+  to {
+    -webkit-transform: rotate(1710deg) translate(200px, 0.1px) rotate(-1710deg);
+            transform: rotate(1710deg) translate(200px, 0.1px) rotate(-1710deg);
+  }
+}
+
+.blob:nth-child(16) {
+  -webkit-animation: move16 20s infinite linear;
+          animation: move16 20s infinite linear;
+}
+
+@-webkit-keyframes move16 {
+  from {
+    -webkit-transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+            transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+  }
+  to {
+    -webkit-transform: rotate(1800deg) translate(200px, 0.1px) rotate(-1800deg);
+            transform: rotate(1800deg) translate(200px, 0.1px) rotate(-1800deg);
+  }
+}
+
+@keyframes move16 {
+  from {
+    -webkit-transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+            transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+  }
+  to {
+    -webkit-transform: rotate(1800deg) translate(200px, 0.1px) rotate(-1800deg);
+            transform: rotate(1800deg) translate(200px, 0.1px) rotate(-1800deg);
+  }
+}
+
+.blob:nth-child(17) {
+  -webkit-animation: move17 20s infinite linear;
+          animation: move17 20s infinite linear;
+}
+
+@-webkit-keyframes move17 {
+  from {
+    -webkit-transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+            transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+  }
+  to {
+    -webkit-transform: rotate(1890deg) translate(200px, 0.1px) rotate(-1890deg);
+            transform: rotate(1890deg) translate(200px, 0.1px) rotate(-1890deg);
+  }
+}
+
+@keyframes move17 {
+  from {
+    -webkit-transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+            transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+  }
+  to {
+    -webkit-transform: rotate(1890deg) translate(200px, 0.1px) rotate(-1890deg);
+            transform: rotate(1890deg) translate(200px, 0.1px) rotate(-1890deg);
+  }
+}
+
+.blob:nth-child(18) {
+  -webkit-animation: move18 20s infinite linear;
+          animation: move18 20s infinite linear;
+}
+
+@-webkit-keyframes move18 {
+  from {
+    -webkit-transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+            transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+  }
+  to {
+    -webkit-transform: rotate(1980deg) translate(200px, 0.1px) rotate(-1980deg);
+            transform: rotate(1980deg) translate(200px, 0.1px) rotate(-1980deg);
+  }
+}
+
+@keyframes move18 {
+  from {
+    -webkit-transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+            transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+  }
+  to {
+    -webkit-transform: rotate(1980deg) translate(200px, 0.1px) rotate(-1980deg);
+            transform: rotate(1980deg) translate(200px, 0.1px) rotate(-1980deg);
+  }
+}
