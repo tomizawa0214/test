@@ -1,0 +1,243 @@
+.rain {
+  background-color: #102030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.rain > div {
+  -webkit-animation: rain 500ms linear infinite;
+          animation: rain 500ms linear infinite;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  left: 0;
+  top: -20vh;
+  width: 1px;
+  height: 20vh;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.rain > div:nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+  -webkit-animation-duration: 579ms;
+          animation-duration: 579ms;
+  left: 35vw;
+}
+
+.rain > div:nth-child(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-duration: 618ms;
+          animation-duration: 618ms;
+  left: 57vw;
+}
+
+.rain > div:nth-child(3) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  -webkit-animation-duration: 407ms;
+          animation-duration: 407ms;
+  left: 37vw;
+}
+
+.rain > div:nth-child(4) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+  -webkit-animation-duration: 524ms;
+          animation-duration: 524ms;
+  left: 62vw;
+}
+
+.rain > div:nth-child(5) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  -webkit-animation-duration: 548ms;
+          animation-duration: 548ms;
+  left: 62vw;
+}
+
+.rain > div:nth-child(6) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+  -webkit-animation-duration: 459ms;
+          animation-duration: 459ms;
+  left: 6vw;
+}
+
+.rain > div:nth-child(7) {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+  -webkit-animation-duration: 418ms;
+          animation-duration: 418ms;
+  left: 49vw;
+}
+
+.rain > div:nth-child(8) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+  -webkit-animation-duration: 416ms;
+          animation-duration: 416ms;
+  left: 68vw;
+}
+
+.rain > div:nth-child(9) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+  -webkit-animation-duration: 379ms;
+          animation-duration: 379ms;
+  left: 94vw;
+}
+
+.rain > div:nth-child(10) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+  -webkit-animation-duration: 490ms;
+          animation-duration: 490ms;
+  left: 28vw;
+}
+
+.rain > div:nth-child(11) {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+  -webkit-animation-duration: 470ms;
+          animation-duration: 470ms;
+  left: 48vw;
+}
+
+.rain > div:nth-child(12) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+  -webkit-animation-duration: 612ms;
+          animation-duration: 612ms;
+  left: 22vw;
+}
+
+.rain > div:nth-child(13) {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+  -webkit-animation-duration: 509ms;
+          animation-duration: 509ms;
+  left: 44vw;
+}
+
+.rain > div:nth-child(14) {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
+  -webkit-animation-duration: 556ms;
+          animation-duration: 556ms;
+  left: 60vw;
+}
+
+.rain > div:nth-child(15) {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+  -webkit-animation-duration: 449ms;
+          animation-duration: 449ms;
+  left: 24vw;
+}
+
+.rain > div:nth-child(16) {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+  -webkit-animation-duration: 577ms;
+          animation-duration: 577ms;
+  left: 52vw;
+}
+
+.rain > div:nth-child(17) {
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
+  -webkit-animation-duration: 411ms;
+          animation-duration: 411ms;
+  left: 13vw;
+}
+
+.rain > div:nth-child(18) {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+  -webkit-animation-duration: 438ms;
+          animation-duration: 438ms;
+  left: 83vw;
+}
+
+.rain > div:nth-child(19) {
+  -webkit-animation-delay: 1900ms;
+          animation-delay: 1900ms;
+  -webkit-animation-duration: 436ms;
+          animation-duration: 436ms;
+  left: 38vw;
+}
+
+.rain > div:nth-child(20) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+  -webkit-animation-duration: 459ms;
+          animation-duration: 459ms;
+  left: 15vw;
+}
+
+.rain > div:nth-child(21) {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+  -webkit-animation-duration: 483ms;
+          animation-duration: 483ms;
+  left: 59vw;
+}
+
+.rain > div:nth-child(22) {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms;
+  -webkit-animation-duration: 473ms;
+          animation-duration: 473ms;
+  left: 39vw;
+}
+
+.rain > div:nth-child(23) {
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
+  -webkit-animation-duration: 586ms;
+          animation-duration: 586ms;
+  left: 73vw;
+}
+
+.rain > div:nth-child(24) {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+  -webkit-animation-duration: 619ms;
+          animation-duration: 619ms;
+  left: 48vw;
+}
+
+.rain > div:nth-child(25) {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms;
+  -webkit-animation-duration: 498ms;
+          animation-duration: 498ms;
+  left: 5vw;
+}
+
+@-webkit-keyframes rain {
+  from {
+    -webkit-transform: rotate(-5deg) translateY(-20vh);
+            transform: rotate(-5deg) translateY(-20vh);
+  }
+  to {
+    -webkit-transform: rotate(-5deg) translateY(120vh);
+            transform: rotate(-5deg) translateY(120vh);
+  }
+}
+
+@keyframes rain {
+  from {
+    -webkit-transform: rotate(-5deg) translateY(-20vh);
+            transform: rotate(-5deg) translateY(-20vh);
+  }
+  to {
+    -webkit-transform: rotate(-5deg) translateY(120vh);
+            transform: rotate(-5deg) translateY(120vh);
+  }
+}
