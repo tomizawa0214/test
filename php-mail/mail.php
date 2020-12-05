@@ -88,7 +88,7 @@ $confirmDsp = 1;
 $jumpPage = 1;
 
 // 送信完了後に表示するページURL（上記で1を設定した場合のみ）※httpから始まるURLで指定ください。（相対パスでも基本的には問題ないです）
-$thanksPage = "https://tomizawajun.com/contact/thanks";
+$thanksPage = "http://xs365626.xsrv.jp/contact_thanks.html";
 
 // 必須入力項目を設定する(する=1, しない=0)
 $requireCheck = 1;
@@ -150,7 +150,7 @@ FOOTER;
 $mail_check = 1;
 
 //全角英数字→半角変換を行うかどうか。(する=1, しない=0)
-$hankaku = 0;
+$hankaku = 1;
 
 //全角英数字→半角変換を行う項目のname属性の値（name="○○"の「○○」部分）
 //※複数の場合にはカンマで区切って下さい。（上記で「1」を指定した場合のみ有効）
