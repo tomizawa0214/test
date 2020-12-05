@@ -376,7 +376,7 @@ else if($confirmDsp == 1){
 
 	<script>
 		// 確認画面のEメール(確認用)と個人情報の取り扱いについての項目は非表示
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('tr').eq(2).hide();
 			$('tr:last').hide();
 		});
