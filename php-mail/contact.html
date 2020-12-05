@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>事務局へお問い合わせ</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
@@ -16,7 +15,7 @@
   <header>
     <div class="container">
       <div class="logo">
-        <h1><a href="./"><img src="assets/img/logo.png" alt="特定非営利活動法人全国認定こども園協会宮城県支部"></a></h1>
+        <h1><a href="./"><img src="/assets/img/logo.png" alt="特定非営利活動法人全国認定こども園協会宮城県支部"></a></h1>
       </div>
       <div class="drawer only_sp">
         <input type="checkbox" id="drawer-check" class="drawer-hidden">
@@ -62,23 +61,23 @@
               <tbody class="contact_table">
                 <tr>
                   <th><strong class="contact_required">必須</strong>お名前</th>
-                  <td><input name="お名前" type="text" id="name" value="" maxlength="50" placeholder="例：宮城　みどり"></td>
+                  <td><input name="お名前[][ 様]" type="text" id="name" value="" maxlength="50" placeholder="例：宮城　みどり" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>メールアドレス</th>
-                  <td><input name="Email" type="text" id="mail" value="" maxlength="50" placeholder="例：×××＠×××.com"></td>
+                  <td><input name="Email" type="text" id="mail" value="" maxlength="50" placeholder="例：×××＠×××.com" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>メールアドレス（確認用）</th>
-                  <td><input name="Email(確認用)" type="text" id="mail" value="" maxlength="50" placeholder="例：×××＠×××.com"></td>
+                  <td><input type="text" maxlength="50" placeholder="例：×××＠×××.com" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>電話番号</th>
-                  <td><input name="電話番号" type="text" id="tel" value="" maxlength="30" placeholder="例：022-123-4567"></td>
+                  <td><input name="電話番号" type="text" id="tel" value="" maxlength="30" placeholder="例：022-123-4567" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>お問い合わせ内容</th>
-                  <td><textarea name="お問い合わせ内容" rows="6" id="mess" maxlength="2000" placeholder="お問い合わせ内容をご記入ください"></textarea></td>
+                  <td><textarea name="お問い合わせ内容" rows="6" id="mess" maxlength="2000" placeholder="お問い合わせ内容をご記入ください" required></textarea></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>個人情報の取り扱いについて</th>
@@ -94,17 +93,13 @@
                         </div>
                       </div>
                     </span>
-                    <input type="checkbox" name="個人情報の取り扱いについて" value="1" id="occu1"><label for="occu1" class="occu1">同意する</label>
+                    <input type="checkbox" name="個人情報の取り扱いについて" value="同意する" id="occu1" required><label for="occu1" class="occu1">同意する</label>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <input type="submit" value="確認する">
+            <input class="send_ck" type="submit" value="確認する">
           </form>
-          <!-- <div class="contact_send">
-            <a class="send_ck" href="#">確認する</a>
-            <a class="send_msg" href="#">送信する</a>
-          </div> -->
         </div>
       </section>
     </div>

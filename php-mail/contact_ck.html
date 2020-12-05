@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- 電話番号の自動リンク機能を無効化 -->
+    <meta name="format-detection" content="telephone=no">
+    <title>確認画面 | 事務局へお問い合わせ</title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/contact_ck.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1><a href="./"><img src="/assets/img/logo.png" alt="特定非営利活動法人全国認定こども園協会宮城県支部"></a></h1>
+      </div>
+      <div class="drawer only_sp">
+        <input type="checkbox" id="drawer-check" class="drawer-hidden">
+        <label for="drawer-check" class="drawer-open"><span></span></label>
+        <div class="label_text"></div>
+        <label for="drawer-check" class="drawer-close"></label>
+        <div class="drawer-content">
+          <ul class="drawer_nav">
+            <li><a href="/organization.html">組織概要</a></li>
+            <li><a href="/training.html">研修会のご案内</a></li>
+            <li><a href="/facility.html">施設紹介・求人情報</a></li>
+            <li><a href="/kindergartens.html">加盟園について</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav_box">
+          <li><a href="/organization.html">組織概要</a></li>
+          <li><a href="/training.html">研修会のご案内</a></li>
+          <li><a href="/facility.html">施設紹介・求人情報</a></li>
+          <li><a href="/kindergartens.html">加盟園について</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ハンバーガーメニュー部分 -->
+  </header>
+<!-- ▲ Headerやその他コンテンツなど　※自由に編集可 ▲-->
+
+<!-- ▼************ 送信内容表示部　※編集は自己責任で ************ ▼-->
+  <main>
+    <div class="container">
+      <div class="top_title">
+        <h1>事務局へお問い合わせ</h1>
+      </div>
+      <section class="contact">
+        <div class="section_container">
+          <div class="contact_head">
+            <h2>お問い合わせフォーム</h2>
+          </div>
+          <div id="formWrap">
+            <?php if($empty_flag == 1){ ?>
+            <div class="error_wrap">
+              <h4>入力にエラーがあります。下記をご確認の上「戻る」ボタンにて修正をお願い致します。</h4>
+              <div class="error_messe_wrap">
+                <?php echo $errm; ?>
+              </div>
+              <input class="form_back_only" type="button" value="前画面に戻る" onClick="history.back()">
+            </div>
+            <?php }else{ ?>
+            <p class="form_msg">以下の内容で間違いがなければ、「送信する」ボタンを押してください。</p>
+            <form action="<?php echo h($_SERVER['SCRIPT_NAME']); ?>" method="POST">
+              <table>
+                <?php echo confirmOutput($_POST);//入力内容を表示?>
+              </table>
+              <p class="form_btn_wrap">
+                <input type="hidden" name="mail_set" value="confirm_submit">
+                <input type="hidden" name="httpReferer" value="<?php echo h($_SERVER['HTTP_REFERER']);?>">
+                <input class="form_back" type="button" value="前画面に戻る" onClick="history.back()">
+                <input class="form_send" type="submit" value="送信する">
+              </p>
+            </form>
+            <?php } ?>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+<!-- ▲ *********** 送信内容確認部　※編集は自己責任で ************ ▲-->
+
+<!-- ▼ Footerその他コンテンツなど　※編集可 ▼-->
+  <footer id="footer">
+    <div class="container">
+      <ul class="footer_nav">
+        <li><a href="#">組織概要</a></li>
+        <li><a href="#">研修会のご案内</a></li>
+        <li><a href="#">施設紹介・求人情報</a></li>
+        <li><a href="#">加盟園について</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+      <div class="footer_company">
+        <a href="http://www.kodomoenkyokai.org/" class="footer_company_logo"><img src="/assets/img/footer_logo.png" alt="特定非営利活動法人全国認定こども園協会"></a>
+        <div class="footer_company_text">「全国認定こども園協会」、および「認定こども園協会」の名称は、特定非営利活動法人全国認定こども園協会が商標登録しております。<br>商標登録番号5649503号</div>
+      </div>
+      <p class="footer_copy"><small>&copy;2020 全国認定こども園協会 宮城県支部</small></p>
+    </div>
+  </footer>
+
+  <div class="page_top">
+    <img src="./assets/img/page_top.png" alt="page top">
+  </div>
+</body>
+
+</html>

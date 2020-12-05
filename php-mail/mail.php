@@ -85,7 +85,7 @@ $confirmDsp = 1;
 // 送信完了後に自動的に指定のページ(サンクスページなど)に移動する(する=1, しない=0)
 // CV率を解析したい場合などはサンクスページを別途用意し、URLをこの下の項目で指定してください。
 // 0にすると、デフォルトの送信完了画面が表示されます。
-$jumpPage = 0;
+$jumpPage = 1;
 
 // 送信完了後に表示するページURL（上記で1を設定した場合のみ）※httpから始まるURLで指定ください。（相対パスでも基本的には問題ないです）
 $thanksPage = "https://tomizawajun.com/contact/thanks";
@@ -270,53 +270,53 @@ else if($confirmDsp == 1){
 <style type="text/css">
 /* 自由に編集下さい */
 #formWrap {
-	width:700px;
-	margin:0 auto;
-	color:#555;
-	line-height:120%;
-	font-size:90%;
+width:700px;
+margin:0 auto;
+color:#555;
+line-height:120%;
+font-size:90%;
 }
 table.formTable{
-	width:100%;
-	margin:0 auto;
-	border-collapse:collapse;
+width:100%;
+margin:0 auto;
+border-collapse:collapse;
 }
 table.formTable td,table.formTable th{
-	border:1px solid #ccc;
-	padding:10px;
+border:1px solid #ccc;
+padding:10px;
 }
 table.formTable th{
-	width:30%;
-	font-weight:normal;
-	background:#efefef;
-	text-align:left;
+width:30%;
+font-weight:normal;
+background:#efefef;
+text-align:left;
 }
 p.error_messe{
-	margin:5px 0;
-	color:red;
+margin:5px 0;
+color:red;
 }
 /*　簡易版レスポンシブ用CSS（必要最低限のみとしています。ブレークポイントも含め自由に設定下さい）　*/
 @media screen and (max-width:572px) {
 #formWrap {
-	width:95%;
-	margin:0 auto;
+width:95%;
+margin:0 auto;
 }
 table.formTable th, table.formTable td {
-	width:auto;
-	display:block;
+width:auto;
+display:block;
 }
 table.formTable th {
-	margin-top:5px;
-	border-bottom:0;
+margin-top:5px;
+border-bottom:0;
 }
 input[type="submit"], input[type="reset"], input[type="button"] {
-	display:block;
-	width:100%;
-	height:40px;
+display:block;
+width:100%;
+height:40px;
 }
 }
 </style>
-</head>
+	</head>
 <body>
 
 <!-- ▲ Headerやその他コンテンツなど　※自由に編集可 ▲-->
