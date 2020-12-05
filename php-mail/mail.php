@@ -218,7 +218,7 @@ if(empty($errm)){
 		}
 	}
 }
-  
+
 if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
 	
 	//トークンチェック（CSRF対策）※確認画面がONの場合のみ実施
@@ -373,6 +373,14 @@ else if($confirmDsp == 1){
 			<img src="./assets/img/page_top.png" alt="page top">
 		</div>
 	</body>
+
+	<script>
+		// 確認画面のEメール(確認用)と個人情報の取り扱いについての項目は非表示
+		$(document).ready(function () {
+			$('tr').eq(2).hide();
+			$('tr:last').hide();
+		});
+	</script>
 
 </html>
 <?php

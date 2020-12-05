@@ -65,15 +65,15 @@
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>メールアドレス</th>
-                  <td><input name="Email" type="text" id="mail" value="" maxlength="50" placeholder="例：×××＠×××.com" required></td>
+                  <td><input name="Email" type="email" id="mail" value="" maxlength="50" placeholder="例：×××＠×××.com" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>メールアドレス（確認用）</th>
-                  <td><input type="text" maxlength="50" placeholder="例：×××＠×××.com" required></td>
+                  <td><input name="Email(確認用)" type="email" value="" maxlength="50" placeholder="例：×××＠×××.com" required oninput="CheckEmail_2(this)"></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>電話番号</th>
-                  <td><input name="電話番号" type="text" id="tel" value="" maxlength="30" placeholder="例：022-123-4567" required></td>
+                  <td><input name="電話番号" type="tel" id="tel" value="" maxlength="30" placeholder="例：022-123-4567" required></td>
                 </tr>
                 <tr>
                   <th><strong class="contact_required">必須</strong>お問い合わせ内容</th>
@@ -125,6 +125,20 @@
   <div class="page_top">
     <img src="./assets/img/page_top.png" alt="page top">
   </div>
+
+  <script>
+    // メールアドレス確認用のバリデーション
+    function CheckEmail_2(input){
+      var mail = document.getElementById('mail').value;
+      var mailConfirm = input.value;
+
+      if ( mail != mailConfirm ) {
+        input.setCustomValidity('メールアドレスが一致しません');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
+  </script>
 </body>
 
 </html>
