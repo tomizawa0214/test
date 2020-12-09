@@ -2,7 +2,6 @@ $(document).on('click', '.show', function(){
   $('.slider2').fadeIn();
 
   var mySwiper2 = new Swiper ('.slider2', {
-    initialSlide: 0,
     loop: true,
     shortSwipes: false,
     navigation: {
@@ -12,7 +11,7 @@ $(document).on('click', '.show', function(){
   });
 });
 
-let slider2 = $('.slider2').html();
+let slider2 = $('.wrap').html();
 
 $(document).on('click', '.hide', function(){
   $.when(
@@ -20,9 +19,7 @@ $(document).on('click', '.hide', function(){
     $('.slider2').fadeOut(),
   ).done(function() {
       // 後に実行したい処理
-    $('.slider2').removeAttr('style');
-    $('.slider2').attr('class', 'swiper-container slider2');
-    $('.slider2').html(slider2);
+    $('.wrap').html(slider2);
 	});
 });
 
