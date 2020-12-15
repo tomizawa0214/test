@@ -13,7 +13,7 @@ body {
     bottom: 0;
     background-color: rgba(230, 230, 230, .7);
     animation-name: shutter;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -40,7 +40,7 @@ body {
     margin: auto;
     background-color: rgba(230, 230, 230, .7);
     animation-name: left-shutter;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -74,7 +74,7 @@ body {
     margin: auto;
     background-color: #fff;
     animation-name: right-shutter;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
