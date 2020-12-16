@@ -13,7 +13,7 @@ body {
     bottom: 0;
     background-color: #000;
     animation-name: shutter;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
