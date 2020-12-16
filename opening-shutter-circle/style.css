@@ -13,7 +13,7 @@ body {
     bottom: 0;
     background-color: #000;
     animation-name: shutter;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -41,7 +41,7 @@ body {
     transform: translateX(-50%);
     background-color: #fff;
     animation-name: shutter-open;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
