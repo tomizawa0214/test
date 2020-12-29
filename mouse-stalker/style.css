@@ -1,0 +1,41 @@
+#stalker {
+    position: fixed;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
+    transition-timing-function: ease-out;
+    pointer-events: none;
+}
+
+#stalker.hov_ {
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    left: -32px;
+    transition: .5s;
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+
+.wrap {
+    padding: 16px;
+}
+
+a {
+    display: inline-block;
+    margin: 16px;
+    padding: 8px 32px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #666;
+}
+
+#bg {
+    background-color: red;
+    height: 300px;
+}
