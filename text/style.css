@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap');
+
+p {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.shaggy {
+    margin-top: 20px;
+    transform: rotate(0.03deg);
+}
