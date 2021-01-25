@@ -1,0 +1,124 @@
+html {
+    font-size: 14px;
+}
+
+main {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.sectionWrapper {
+    padding: 100px 0;
+}
+
+li > *:not(ul):not(li) {
+    width: 180px;
+    padding: 0.5rem;
+    background-color: #f2f2f2;
+    display: block;
+    align-self: baseline;
+}
+
+li > *:not(ul):not(li) > * {
+    padding: 0;
+}
+
+li img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.chart {
+    overflow-x: scroll;
+}
+
+.chart > ul {
+    padding-left: 50px;
+}
+
+.chart > ul > li:first-child:last-child::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ul > li {
+    width: fit-content;
+    position: relative;
+    display: flex;
+}
+
+ul > li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+ul > li:first-child::before {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 1rem;
+    left: -50px;
+}
+
+ul > li:first-child::after {
+    content: "";
+    width: 1px;
+    height: calc(100% + 1rem);
+    background-color: #333;
+    position: absolute;
+    top: 1rem;
+    left: -25px;
+}
+
+ul > li:not(:first-child)::before {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 1rem;
+    left: -25px;
+}
+
+ul > li:not(:first-child)::after {
+    content: "";
+    width: 1px;
+    height: calc(100% + 1rem);
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: -25px;
+}
+
+ul > li:last-child::after {
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background-color: #333;
+    position: absolute;
+    top: -1rem;
+    left: -25px;
+}
+
+ul > li:first-child:last-child::after {
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.chart ul li ul {
+    width: auto;
+    margin-left: 50px;
+}
